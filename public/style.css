@@ -124,6 +124,14 @@ section .cards {
     gap: 20px;
 }
 
+section .topRecipes .cards .card:hover {
+    cursor: auto;
+}
+
+section .cards .card:hover {
+    cursor: pointer;
+}
+
 section .cards .card .recipeImage img {
     width: 300px;
     height: 140px;
@@ -170,6 +178,68 @@ section.about p {
     color: var(--textFour);
     font-size: 18px;
     line-height: 28px;
+}
+
+.modalOverlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modalOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalOverlay.active .modal {
+    background: var(--background);
+    width: 660px;
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.modalOverlay.active .modal img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.modalOverlay.active .modal p.name {
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--textOne);
+}
+
+.modalOverlay.active .modal p.author {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--textSeven);
+}
+
+.modalOverlay.active .modal .closeModal {
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--textNine);
+}
+
+.modalOverlay.active .modal .closeModal p {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.modalOverlay.active .modal .closeModal p:hover {
+    cursor: pointer;
 }
 
 footer {
