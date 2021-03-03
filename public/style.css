@@ -6,6 +6,7 @@
     --footerBG: #EEEEEE;
     --textZero: #000000;
     --textOne: #111111;
+    --textFour: #444444;
     --textSeven: #777777;
     --textNine: #999999;
 }
@@ -48,6 +49,10 @@ header .menu a {
     color: var(--textOne);
 }
 
+header .menu a.active {
+    font-weight: bold;
+}
+
 section {
     max-width: 940px;
     margin: 0 auto;
@@ -62,7 +67,7 @@ section .main {
     grid-template-columns: 1fr 1fr;
 }
 
-section .main .about {
+section .main .mainLeft {
     margin: 0 60px;
     text-align: left;
     display: grid;
@@ -71,11 +76,11 @@ section .main .about {
     position: relative;
 }
 
-section .main .about div {
+section .main .mainLeft div {
     position: relative;
 }
 
-section .main .about div h1 {
+section .main .mainLeft div h1 {
     color: var(--textOne);
     font-size: 32px;
     line-height: 38px;
@@ -84,7 +89,7 @@ section .main .about div h1 {
     bottom: 0;
 }
 
-section .main .about p {
+section .main .mainLeft p {
     color: var(--textZero);
     font-size: 18px;
     line-height: 28px;
@@ -102,7 +107,7 @@ section .main .chef img {
 }
 
 section .topRecipes {
-    margin: 50px 0;
+    margin: 50px 0 0;
 }
 
 section .topRecipes h2 {
@@ -112,20 +117,20 @@ section .topRecipes h2 {
     line-height: 28px;
 }
 
-section .topRecipes .cards {
+section .cards {
     margin: 20px 0 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
-section .topRecipes .cards .card .recipeImage img {
+section .cards .card .recipeImage img {
     width: 300px;
     height: 140px;
     border-radius: 15px;
 }
 
-section .topRecipes .cards .card .recipeName {
+section .cards .card .recipeName {
     color: var(--textOne);
     font-size: 18px;
     line-height: 21px;
@@ -133,7 +138,7 @@ section .topRecipes .cards .card .recipeName {
     text-align: left;
 }
 
-section .topRecipes .cards .card .recipeAuthor {
+section .cards .card .recipeAuthor {
     color: var(--textSeven);
     font-size: 14px;
     line-height: 16px;
@@ -141,7 +146,34 @@ section .topRecipes .cards .card .recipeAuthor {
     text-align: left;
 }
 
+section.about {
+    text-align: left;
+}
+
+section.about h2{
+    color: var(--textOne);
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+section.about h3{
+    margin-top: 30px;
+    color: var(--textOne);
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+section.about p {
+    margin-top: 20px;
+    color: var(--textFour);
+    font-size: 18px;
+    line-height: 28px;
+}
+
 footer {
+    margin-top: 50px;
     width: 100%;
     height: 62px;
     background: var(--footerBG);
