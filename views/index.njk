@@ -22,72 +22,19 @@
     <div class="topRecipes">
         <h2>Mais acessadas</h2>
         <div class="cards">
+            {% for recipe in recipes.slice(0, 6) %}
             <div class="card">
                 <div class="recipeImage">
-                    <img src="/burger.png" alt="Burguer">
+                    <img src="{{recipe.image}}" alt="{{recipe.title}}">
                 </div>
                 <div class="recipeName">
-                    <p>Triplo bacon burguer</p>
+                    <p>{{recipe.title}}</p>
                 </div>
                 <div class="recipeAuthor">
-                    <p>por Jorge Relato</p>
+                    <p>{{recipe.author}}</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="recipeImage">
-                    <img src="/pizza.png" alt="Pizza">
-                </div>
-                <div class="recipeName">
-                    <p>Pizza 4 estações</p>
-                </div>
-                <div class="recipeAuthor">
-                    <p>por Fabiana Melo</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="recipeImage">
-                    <img src="/espaguete.png" alt="Espaguete">
-                </div>
-                <div class="recipeName">
-                    <p>Espaguete ao alho</p>
-                </div>
-                <div class="recipeAuthor">
-                    <p>por Júlia Kinoto</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="recipeImage">
-                    <img src="/lasanha.png" alt="Lasanha">
-                </div>
-                <div class="recipeName">
-                    <p>Lasanha mac n' cheese</p>
-                </div>
-                <div class="recipeAuthor">
-                    <p>por Juliano Vieira</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="recipeImage">
-                    <img src="/doce.png" alt="Doce">
-                </div>
-                <div class="recipeName">
-                    <p>Docinhos pão-do-céu</p>
-                </div>
-                <div class="recipeAuthor">
-                    <p>por Ricardo Golvea</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="recipeImage">
-                    <img src="/asinhas.png" alt="asinhas">
-                </div>
-                <div class="recipeName">
-                    <p>Asinhas de frango ao barbecue</p>
-                </div>
-                <div class="recipeAuthor">
-                    <p>por Vania Steroski</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

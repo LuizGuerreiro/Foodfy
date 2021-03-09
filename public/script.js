@@ -1,15 +1,26 @@
-const modal = document.querySelector(".modalOverlay");
 const cards = document.querySelectorAll(".card");
+const span = document.querySelectorAll("span");
+const mode = document.querySelectorAll(".mode");
 
 for (let card of cards) {
     card.addEventListener("click", function() {
-        modal.querySelector("img").src = card.querySelector("img").src;
-        modal.querySelector(".name").innerHTML = card.querySelector(".recipeName").innerHTML;
-        modal.querySelector(".author").innerHTML = card.querySelector(".recipeAuthor").innerHTML;
-        modal.classList.add("active");
-    })
-}
+        const index = card.getAttribute('id');
+        window.location.href = `/recipes/${index}`;
+    });
+};
 
-document.querySelector(".closeModal").addEventListener("click", function() {
-    modal.classList.remove("active")
-})
+function visibility(index) {
+    span[index].addEventListener("click", function() {
+        if (mode[index].classList.contains("hide")) {
+            mode[index].classList.remove("hide");
+            span[index].innerHTML = "ESCONDER";
+        } else {
+            mode[index].classList.add("hide");
+            span[index].innerHTML = "MOSTRAR";
+        }
+    });
+};
+
+for (i = 0; i <= 2; i++) {
+    visibility(i)
+};
