@@ -1,0 +1,31 @@
+{% extends "admin/layoutAdm.njk" %}
+
+{%block title%}
+<title>Foodfy Administrador - Editar Chef</title>
+{%endblock title%}
+
+{% block admTitle %}
+    <div class="title">
+        <h1>Editando chef</h1>
+        <div>
+         <button type="submit" form="formDelete">
+            Deletar
+        </button>
+         <button type="submit" form="formCreate">
+            Salvar chef
+        </button>
+        </div>
+    </div>
+{% endblock admTitle %}
+
+{%block main%}
+   <form action="/admin/chefs?_method=PUT" method="post" id="formCreate">
+      {%include "admin/chefs/fields.njk"%}
+      <input type="hidden" name="id" value="{{chef.id}}">
+   </form>
+   <form action="/admin/chefs?_method=DELETE" method="post" id="formDelete">
+     <input type="hidden" name="id" value="{{chef.id}}">
+     <input type="hidden" name="recipes" value="{{chef.totalrecipes}}">
+   </form>
+    <script src="/confirm.js"></script>
+{%endblock main%}

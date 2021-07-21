@@ -1,0 +1,20 @@
+{% extends "admin/layoutAdm.njk" %}
+
+{%block title%}
+<title>Foodfy Administrador - Criar Chef</title>
+{%endblock title%}
+
+{% block admTitle %}
+    <div class="title">
+        <h1>Criando chef</h1>
+        <button type="submit" form="formCreate">
+            Salvar chef
+        </button>
+    </div>
+{% endblock admTitle %}
+
+{%block main%}
+   <form action="/admin/chefs" method="POST" id="formCreate">
+      {%include "admin/chefs/fields.njk"%}
+   </form>
+{%endblock main%}

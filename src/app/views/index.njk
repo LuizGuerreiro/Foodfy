@@ -4,6 +4,19 @@
 <title>Foodfy</title>
 {%endblock%}
 
+{% block form %}
+    <form action="/filteredRecipes" method="get">
+        <input 
+            type="text"
+            name="filter"
+            placeholder="Buscar uma receita"
+        >
+        <button type="submit">
+            Buscar
+        </button>
+    </form>
+{% endblock form %}
+
 {%block body%}
 <section>
     <div class="main">
@@ -31,7 +44,7 @@
                     <p>{{recipe.title}}</p>
                 </div>
                 <div class="recipeAuthor">
-                    <p>{{recipe.author}}</p>
+                    <p>por {{recipe.name}}</p>
                 </div>
             </div>
             {% endfor %}

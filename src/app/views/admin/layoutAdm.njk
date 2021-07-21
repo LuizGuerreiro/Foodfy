@@ -6,12 +6,12 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/admin.css">
+   <link rel="shortcut icon" href="https://img-premium.flaticon.com/png/128/3321/premium/3321591.png?token=exp=1626805323~hmac=1859ab959d08c2886d3dc572ea1f11ca" type="image/x-icon">
 
    {% block title %}
    <title>Foodfy Administrador</title>
    {% endblock title %}
-
-   <link rel="stylesheet" href="/admin.css">
 
 </head>
 
@@ -22,6 +22,10 @@
          <a href="/admin/recipes">
             <img src="/logoAdm.png" alt="Foodfy">
          </a>
+         <div class="menu">
+            <a href="/admin/recipes">Receitas</a>
+            <a href="/admin/chefs">Chefs</a>
+         </div>
       </div>
    </header>
 
@@ -32,6 +36,8 @@
       {% block main %}
       {% endblock main %}
    </section>
+
+   <script src="/headerScript.js"></script>
 
 </body>
 

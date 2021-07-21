@@ -1,0 +1,51 @@
+{% extends "admin/layoutAdm.njk" %}
+
+{%block title%}
+<title>Foodfy Administrador - {{chef.name}}</title>
+{%endblock title%}
+
+{% block admTitle %}
+    <div class="title">
+        <h1>Chef: {{chef.name}}</h1>
+        <a href="/admin/chefs/{{chef.id}}/edit">Editar chef</a>
+    </div>
+{% endblock admTitle %}
+
+{%block main%}
+    <div class="chefMain">
+        <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
+        <h1>{{chef.name}}</h1>
+         {% if chef.totalrecipes == 0 %}
+            <p>Nenhuma receita</p>
+         {% elif chef.totalrecipes == 1 %}
+            <p>1 receita</p>
+         {% else %}
+            <p>{{chef.totalrecipes}} receitas</p>
+         {% endif %}
+    </div>
+    <div>
+       {% if chef.totalrecipes != 0 %}
+         <h2>Receitas</h2>
+       {% endif %}
+    </div>
+    <div class="cards">
+      {% for recipe in recipes %}
+      <div class="card" id="{{recipe.id}}">
+            <div class="recipeImage">
+               <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            </div>
+            <div class="recipeInfo">
+               <div class="recipeName">
+                  <p>{{recipe.title}}</p>
+               </div>
+               <div class="recipeAuthor">
+                  <p>por {{chef.name}}</p>
+               </div>
+               <div class="cardLinK">
+                  <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+               </div>
+            </div>
+      </div>
+      {% endfor %}
+   </div>
+{%endblock main%}

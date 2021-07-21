@@ -1,11 +1,11 @@
 {
   "name": "foodfy",
   "version": "1.0.0",
-  "description": "Desafio Foodfy do laaunchstore da Rocketseat",
+  "description": "Desafio Foodfy do curso Launchbase da Rocketseat",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "Luiz Guerreiro",
@@ -13,7 +13,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

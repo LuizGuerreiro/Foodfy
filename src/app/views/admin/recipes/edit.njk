@@ -20,12 +20,13 @@
 
 {%block main%}
    <form action="/admin/recipes?_method=PUT" method="post" id="formCreate">
-      {%include "admin/fields.njk"%}
-      <input type="hidden" name="id" value="{{id}}">
+      {%include "admin/recipes/fields.njk"%}
+      <input type="hidden" name="id" value="{{recipe.id}}">
    </form>
    <form action="/admin/recipes?_method=DELETE" method="post" id="formDelete">
-     <input type="hidden">
+     <input type="hidden" name="id" value="{{recipe.id}}">
    </form>
 
 <script src="/addIngredients.js"></script>
+<script src="/confirm.js"></script>
 {%endblock main%}

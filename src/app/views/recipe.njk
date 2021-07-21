@@ -1,48 +1,46 @@
-{% extends "admin/layoutAdm.njk" %}
+{% extends "layout.njk" %}
 
 {%block title%}
-<title>Foodfy Administrador - {{recipe.title}}</title>
-{%endblock title%}
+<title>{{recipe.title}}</title>
+{%endblock%}
 
-{% block admTitle %}
-    <div class="title">
-        <h1>Receita: {{recipe.title}}</h1>
-        <a href="/admin/recipes/{{id}}/edit">Editar receita</a>
-    </div>
-{% endblock admTitle %}
-
-{%block main%}
+{%block body%}
+<section>
     <div class="recipeMain">
         <img src="{{recipe.image}}" alt="{{recipe.title}}">
         <h1>{{recipe.title}}</h1>
-        <p>por {{recipe.author}}</p>
-        <div>
+        <p>por {{recipe.name}}</p>
+        <div class="recipeMenu">
             <h2>Ingredientes</h2>
+            <span>MOSTRAR</span>
         </div>
-        <div class="recipeStep">
+        <div class="recipeStep mode hide">
             <ul>
                 {% for ingredient in recipe.ingredients %}
                 <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
         </div>
-        <div>
+        <div class="recipeMenu">
             <h2>Modo de preparo</h2>
+            <span>MOSTRAR</span>
         </div>
-        <div class="recipeStep">
+        <div class="recipeStep mode hide">
             {% for step in recipe.preparation %}
             <p>- {{step}}</p>
             {% endfor %}
         </div>
         {% if recipe.information %}
-        <div>
+        <div class="recipeMenu">
             <h2>Informações adicionais</h2>
+            <span>MOSTRAR</span>
         </div>
-        <div class="recipeStep">
+        <div class="recipeStep mode hide">
             <p>{{recipe.information | striptags(true) | escape | nl2br}}</p>
         </div>
         {% endif %}
     </div>
+</section>
 
-{# <script src="/script.js"></script> #}
-{%endblock main%}
+<script src="/visibility.js"></script>
+{%endblock%}

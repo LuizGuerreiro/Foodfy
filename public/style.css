@@ -2,6 +2,7 @@
 
 :root {
     --background: #FFFFFF;
+    --border: #BFBFBF;
     --mainBG: #FBDFDB;
     --footerBG: #EEEEEE;
     --textZero: #000000;
@@ -31,17 +32,15 @@ header {
     max-width: 940px;
     margin: 0 auto;
     color: var(--textOne);
-    height: 93px;
+    height: 10vh;
     text-align: left;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
     align-items: center;
 }
 
-header .logo {
-    width: 213px;
-}
-
 header .menu {
+    margin-right: 15%;
     font-size: 16px;
     line-height: 19px;
     display: flex;
@@ -57,9 +56,47 @@ header .menu a.active {
     font-weight: bold;
 }
 
+header form {
+    display: flex;
+    gap: 2%;
+}
+
+header form input {
+    width: 246px;
+    height: 37px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+header form input::placeholder {
+    font-size: 14px;
+    font-weight: initial;
+    height: 37px;
+    color: var(--textNine);
+}
+
+header form button {
+    width: 91px;
+    height: 37px;
+    background-color: var(--textLink);
+    color: var(--background);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    line-height: 19px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+}
+
 section {
     max-width: 940px;
-    margin: 0 auto;
+    margin: 2vh auto auto;
     padding-bottom: 90px; 
 }
 
@@ -75,14 +112,10 @@ section .main {
 section .main .mainLeft {
     margin: 0 60px;
     text-align: left;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    position: relative;
-}
-
-section .main .mainLeft div {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3%;
 }
 
 section .main .mainLeft div h1 {
@@ -90,8 +123,6 @@ section .main .mainLeft div h1 {
     font-size: 32px;
     line-height: 38px;
     font-weight: bold;
-    position: absolute;
-    bottom: 0;
 }
 
 section .main .mainLeft p {
@@ -122,11 +153,41 @@ section .topRecipes h2 {
     line-height: 28px;
 }
 
-section .cards {
+section .cards,
+section .chefCards {
     margin: 20px 0 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+}
+
+section .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section .chefCards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section .chefCards .card {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 25px;
+    align-items: center;
+}
+
+section .chefCards .card .chefImg {
+   width: 64px;
+   height: 64px;
+   object-fit: cover;
+   border-radius: 8.57px;
+}
+
+section .chefCards .card img {
+   width: 64px;
+   height: 64px;
+   object-fit: cover;
+   border: 1px solid var(--border);
+   border-radius: 50%;
 }
 
 section .topRecipes .cards .card:hover {
@@ -144,14 +205,19 @@ section .cards .card .recipeImage img {
     border-radius: 15px;
 }
 
+.chefName,
 section .cards .card .recipeName {
     color: var(--textOne);
     font-size: 18px;
     line-height: 21px;
-    padding-top: 20px;
     text-align: left;
 }
 
+section .cards .card .recipeName {
+    padding-top: 20px;
+}
+
+.chefAuthor,
 section .cards .card .recipeAuthor {
     color: var(--textSeven);
     font-size: 14px;
@@ -274,4 +340,25 @@ footer p {
     padding: 50px;
     background-color: var(--textLink);
     color: var(--footerBG);
+}
+
+/*  PAGINATION  */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: var(--textLink);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    filter: brightness(0.5);
 }

@@ -8,9 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="https://img-premium.flaticon.com/png/128/3321/premium/3321591.png?token=exp=1626805323~hmac=1859ab959d08c2886d3dc572ea1f11ca" type="image/x-icon">
+
     {%block title%}
     <title>Foodfy</title>
     {%endblock title%}
+    
 </head>
 
 
@@ -24,11 +27,12 @@
             </a>
         </div>
         <div class="menu">
-            {% block menu %}
             <a href="/about">Sobre</a>
             <a href="/recipes">Receitas</a>
-            {% endblock menu %}
+            <a href="/chefs">Chefes</a>
         </div>
+        {% block form %}
+        {% endblock form %}
     </header>
 
     {%block body%}

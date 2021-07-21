@@ -17,7 +17,22 @@
 <div class="item">
    <div>Autor da receita</div>
    <div class="cardTitle">
-      <input type="text" name="author" value="{{recipe.author}}">
+      <select name="chef_id">
+         <option value="" disabled
+            {% if not recipe.chef_id %}
+               selected
+            {% endif %}
+         >Selecione um chef</option>
+         {% for chef in chefOptions %}
+            <option value="{{chef.id}}"
+               {% if recipe.chef_id == chef.id %}
+                  selected
+               {% endif %}
+            >
+               {{chef.name}}
+            </option>
+         {% endfor %}
+      </select>
    </div>
 </div>
 
